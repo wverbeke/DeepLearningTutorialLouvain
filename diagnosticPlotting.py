@@ -41,9 +41,6 @@ def computeEfficiency( outputs, weights, min_output, max_output, num_points ):
     outputs = outputs.reshape( len(outputs) )
     denominator = np.sum( weights )
 
-    print( outputs.shape )
-    print( weights.shape )
-
     #efficiency generator 
     efficiencies = ( np.sum( np.where( outputs > cuts[i], weights, 0 ) )/denominator for i in range( num_points ) )
 
@@ -52,7 +49,6 @@ def computeEfficiency( outputs, weights, min_output, max_output, num_points ):
     for i, efficiency in enumerate( efficiencies ):
         efficiency_array[i] = efficiency
 
-    print( efficiency_array )
     return efficiency_array
         
 
@@ -70,8 +66,6 @@ def computeROC( outputs_signal, weights_signal, outputs_background, weights_back
     #fill in intermediate points 
     sig_eff[1:num_points + 1] = computeEfficiency( outputs_signal, weights_signal, min_output, max_output, num_points )
     bkg_eff[1:num_points + 1] = computeEfficiency( outputs_background, weights_background, min_output, max_output, num_points )
-
-    print( 'done with eff' )
 
     return sig_eff, bkg_eff
     
