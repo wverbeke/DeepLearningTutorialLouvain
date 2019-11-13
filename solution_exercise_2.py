@@ -8,11 +8,11 @@ import matplotlib.pyplot as plt
 
 if __name__ == '__main__' :
 
-    #open file
+    #open files
     signal_f = uproot.open('GluGluHToWWTo2L2Nu_M125.root')
     bkg_f = ( uproot.open('DYJetsToLL_M-10to50-LO.root'), uproot.open('DYJetsToLL_M-50-LO.root') )
 
-    #open trees and print
+    #open trees
     sig_tree = signal_f[ 'Events' ]
     bkg_trees = [ f['Events'] for f in bkg_f ]
 
