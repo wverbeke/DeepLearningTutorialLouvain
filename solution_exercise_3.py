@@ -37,3 +37,8 @@ if __name__ == '__main__' :
     #avoid large numerical scales of weights
     signal_weights /= np.mean( signal_weights )
     bkg_weights /= np.mean( bkg_weights )
+
+    #define arrays with labels for signal and background events
+    #these are what the neural network will try to predict
+    signal_labels = np.ones( len( signal_weights ) )
+    bkg_labels = np.zeros( len( bkg_weights ) )
