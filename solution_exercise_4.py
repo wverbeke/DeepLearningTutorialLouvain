@@ -14,7 +14,7 @@ if __name__ == '__main__' :
     bkg_trees = [ f['Events'] for f in bkg_f ]
 
     #list of input variables
-    input_variables = [	'ptll', 'mth', 'jetpt1_cut', 'uperp', 'upara', 'PfMetDivSumMet', 'recoil', 'mpmet', 'mtw1', 'mtw2', 'PuppiMET_pt', 'MET_pt', 'TkMET_pt', 'projtkmet', 'projpfmet', 'dphilljet_cut', 'dphijet1met_cut', 'dphillmet', 'dphilmet1', 'dphilmet2', 'jetpt2_cut', 'dphijet2met_cut', 'dphilljetjet_cut', 'dphijjmet_cut', 'ptTOT_cut', 'mTOT_cut', 'PV_npvsGood' ]
+	input_variables = ['ptll', 'mth', 'uperp', 'upara', 'ptTOT_cut', 'mTOT_cut']
 
     #function to convert dictionary of arrays to 2D array
     def arrayDictTo2DArray( array_dict ):
