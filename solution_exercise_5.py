@@ -81,6 +81,7 @@ if __name__ == '__main__' :
     #split array with given validation and test fraction
     def splitTrainValTest( array, validation_fraction = 0.4, test_fraction = 0.2 ):
         index_split_val =  int( validation_fraction * len(array) )
+        index_split_val =  int( ( 1 - validation_fraction - test_fraction )* len(array) )
         index_split_test = int( ( 1 - test_fraction ) * len(array) )
         return array[:index_split_val], array[index_split_val:index_split_test], array[index_split_test:]
     
