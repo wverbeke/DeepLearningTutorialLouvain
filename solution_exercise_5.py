@@ -92,10 +92,11 @@ if __name__ == '__main__' :
         data = data[ random_indices ]
         labels = labels[ random_indices ]
         weights = weights[ random_indices ]
+        return data, labels, weights
     
     #randomize signal and background events 
-    randomize( signal_data, signal_labels, signal_weights )
-    randomize( background_data, bkg_labels, bkg_weights )
+    signal_data, signal_labels, signal_weights = randomize( signal_data, signal_labels, signal_weights )
+    signal_data, signal_labels, signal_weight = randomize( background_data, bkg_labels, bkg_weights )
     
     #split signal data
     signal_data_train, signal_data_val, signal_data_test = splitTrainValTest( signal_data )
