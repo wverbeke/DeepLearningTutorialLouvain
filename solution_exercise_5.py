@@ -96,7 +96,7 @@ if __name__ == '__main__' :
     
     #randomize signal and background events 
     signal_data, signal_labels, signal_weights = randomize( signal_data, signal_labels, signal_weights )
-    signal_data, signal_labels, signal_weight = randomize( background_data, bkg_labels, bkg_weights )
+    background_data, background_labels, background_weight = randomize( background_data, bkg_labels, bkg_weights )
     
     #split signal data
     signal_data_train, signal_data_val, signal_data_test = splitTrainValTest( signal_data )
