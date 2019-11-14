@@ -20,5 +20,5 @@ if __name__ == '__main__':
     mean_mtw1 = np.mean( mtw1_array )
     std_mtw1 = np.std( mtw1_array )
     
-    mtw1_array /= mean_mtw1
-    mtw1_array -= std_mtw1
+    mtw1_array -= mean_mtw1
+    mtw1_array /= std_mtw1
