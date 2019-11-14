@@ -33,9 +33,10 @@ if __name__ == '__main__' :
     def normalizeInputArray( array2D ):
 
         #calculate mean along event axis, and expand dimensions of array so that it can be subtracted from previous array
-        array2D -= np.expand_dims( np.mean( array2D, axis = 1 ), axis = 1 )
-        array2D /= np.expand_dims( np.std( array2D, axis = 1 ), axis = 1 )
+        array2D -= np.mean( array2D, axis = 0 )
+        array2D /= np.std( array2D, axis = 0 )
         return array2D
+
 
     #build signal and background arrays
     signal_data = normalizeInputArray( arrayDictTo2DArray( sig_tree.arrays( input_variables ) ) )
